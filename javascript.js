@@ -23,3 +23,42 @@ function getHumanChoice() {
         return;
     }
 }
+
+function playRound(humanChoice, computerChoice) {
+    console.log(`You chose ${humanChoice}, computer chose ${computerChoice}`)
+    if (humanChoice === 'rock' && computerChoice === 'scissors'){
+        console.log('You win, rock beats scissors');
+        humanScore++;
+        return;
+    } else if (humanChoice === 'rock' && computerChoice === 'paper'){
+        console.log('You lose, paper beats rock');
+        computerScore++;
+        return;
+    } else if (humanChoice === 'paper' && computerChoice === 'rock'){
+        console.log('You win, paper beats rock');
+        humanScore++;
+        return;
+    } else if (humanChoice === 'paper' && computerChoice === 'scissors'){
+        console.log('You lose, scissors beat paper');
+        computerScore++;
+        return
+    } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
+        console.log('You lose, rock beats scissors');
+        computerScore++;
+        return;
+    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+        console.log('You win, scissors beat paper');
+        humanScore++;
+        return;
+    } else if (humanChoice === computerChoice) {
+        console.log('Equal choices, no winner this time');
+        return;
+    } else {
+        console.log('Invalid choice');
+        return;
+    }
+}
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
