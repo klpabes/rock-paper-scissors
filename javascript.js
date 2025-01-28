@@ -4,7 +4,7 @@ const choices = ['rock', 'paper', 'scissors'];
 let humanScore = 0, computerScore = 0;
 
 function getComputerChoice() {
-    return choices[Math.floor((Math.random() * 3) + 1)];
+    return choices[Math.floor((Math.random() * 3))];
 }
 
 function getHumanChoice() {
@@ -25,7 +25,7 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    console.log(`You chose ${humanChoice}, computer chose ${computerChoice}`)
+    // console.log(`You chose ${humanChoice}, computer chose ${computerChoice}`)
     if (humanChoice === 'rock' && computerChoice === 'scissors'){
         console.log('You win, rock beats scissors');
         humanScore++;
@@ -54,11 +54,21 @@ function playRound(humanChoice, computerChoice) {
         console.log('Equal choices, no winner this time');
         return;
     } else {
+        console.log(`You picked ${humanChoice}, computer picked ${computerChoice}`)
         console.log('Invalid choice');
         return;
     }
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection)
+    }
+    console.log(`Game Finished, scores are: Human:${humanScore} Computer:${computerScore}`)
+    return;
+}
+
+playGame()
