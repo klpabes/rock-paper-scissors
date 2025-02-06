@@ -10,6 +10,7 @@ const scoreComputer = document.querySelector('.score-computer');
 const newGameBtn = document.querySelector('.new-game-btn');
 const playerIcon = document.querySelector('#player-icon');
 const computerIcon = document.querySelector('#computer-icon');
+const divChoices = document.querySelector('.div-choices');
 
 function getComputerChoice() {
     return Math.floor((Math.random() * 3));
@@ -79,16 +80,14 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
-
 function updateIcons(humanChoice, computerChoice) {
     const iconsArr = ['&#9994;','&#9995;','&#9996;'];
-
 
     playerIcon.innerHTML = iconsArr[humanChoice];
     computerIcon.innerHTML = iconsArr[computerChoice];
 }
 
-const divChoices = document.querySelector('.div-choices');
+
 divChoices.addEventListener('click', e => {
     let target = e.target;
     const humanChoice = target.id;
@@ -111,7 +110,7 @@ divChoices.addEventListener('click', e => {
     }
 })
 
-function newGame () {
+function newGame() {
     playing = true;
 
     humanScore = 0;
@@ -119,7 +118,6 @@ function newGame () {
     roundStatus.textContent = 'Choose between rock, paper or scissors';
     scorePlayer.textContent = 0;
     scoreComputer.textContent = 0;
-
 
     playerIcon.innerHTML = '&#128540';
     computerIcon.innerHTML = '&#128540';
