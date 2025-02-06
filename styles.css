@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, h3, p, .round-container {
+    text-align: center;
+}
+
+/* h3 {
+    font-size: 1.5rem;
+} */
+
+.round-container, .div-choices {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.new-game-btn {
+    margin: 16px auto;
+    display: block;
+}
+
+button {
+    padding: 0.5rem;
+}
+
+.new-game-btn {
+    padding: 0.5rem 2rem;
+}
+
+button, .player, .computer {
+    font-size: 1.5rem;
+}
